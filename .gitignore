@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual environments
+rasaenv310/
+rasaenv/
+env/
+
+# IDE files
+.vscode/
+.idea/
