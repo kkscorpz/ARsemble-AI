@@ -5,6 +5,4 @@ tracker_store:
   type: SQL
   dialect: "sqlite"
   url: "sqlite:///tracker.db"
-
-lock_store:
-  type: InMemoryLockStore
+# Remove lock_store entirely for now
