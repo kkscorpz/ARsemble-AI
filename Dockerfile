@@ -19,7 +19,7 @@ EXPOSE 5055
 WORKDIR /app
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install requirements.txt
 
 COPY . /app
 
