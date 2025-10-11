@@ -6,6 +6,7 @@ RUN apt-get update && \
     python3-dev && \
     rm -rf /var/lib/apt/lists/*
 
+# <<< FIX para sa cython_sources error >>>
 RUN pip install --upgrade pip setuptools wheel
 
 ENV PYTHONUNBUFFERED=1 \
@@ -24,4 +25,5 @@ COPY . /app
 
 RUN rasa train
 
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "-p", "5005"]
+
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "-p", "${PORT:-5005}"]
