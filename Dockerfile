@@ -29,7 +29,8 @@ COPY . /app
 
 # STEP 7: Train the model (recommended during the build process)
 RUN rasa train
-
+# Sa Dockerfile, bago ang RUN pip install...
+RUN pip install Cython
 # STEP 8: Define the command to run the Rasa web server
 # This replaces the 'web' command in your Procfile
 CMD [ "rasa", "run", "--enable-api", "--cors", "*", "-p", "5005" ]
