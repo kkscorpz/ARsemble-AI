@@ -2,8 +2,7 @@
 FROM python:3.10-slim
 
 # STEP 2: Install system dependencies needed to compile packages like PyYAML
-# 'build-essential' provides the C compiler (gcc) and other tools
-# KRITIKAL: Idinagdag ang 'python3-dev' para sa compilation headers.
+# KRITIKAL: 'python3-dev' para sa compilation headers.
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     build-essential \
@@ -21,11 +20,12 @@ EXPOSE 5055
 # STEP 4: Set the working directory for the application
 WORKDIR /app
 
-# STEP 5: Copy requirements and install Python dependencies
+# STEP 5: Copy requirements file and install Python dependencies
+# Ang pag-upgrade sa PyYAML sa 6.0.1 ay dapat na mag-ayos ng Cython build error.
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# STEP 6: Copy the rest of the application code
+# STEP 6: Copy the rest of your project files
 COPY . /app
 
 # STEP 7: Train the model (recommended during the build process)
