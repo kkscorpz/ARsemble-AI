@@ -1,8 +1,7 @@
 # endpoints.yml
 
-# Action server
 action_endpoint:
-  url: "http://localhost:5055/webhook"
+  url: "https://rasa-actions-server.onrender.com/webhook" # <<< PALITAN ITO NG IYONG ACTUAL RENDER ACTION SERVER URL!
 
 # Optional: Tracker store (default is in-memory, usually okay sa testing)
 tracker_store:
