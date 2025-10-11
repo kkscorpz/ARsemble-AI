@@ -1,22 +1,10 @@
-# endpoints.yml
-
 action_endpoint:
-  url: "https://your-actions-server.onrender.com/webhook" # <<< PALITAN MO ITO KAPAG MAY ACTIONS SERVER KA NA SA RENDER!
+  url: "http://localhost:5055/webhook"
 
-# Tracker store (SQLite for production)
 tracker_store:
   type: SQL
   dialect: "sqlite"
-  url: "sqlite:///rasa.db"
+  url: "sqlite:///tracker.db"
 
-# Optional: Event broker (if using RabbitMQ / Kafka)
-# event_broker:
-#   type: "pika"
-#   url: "localhost"
-#   queue: "rasa"
-#   username: "guest"
-#   password: "guest"
-
-# Add this for production
 lock_store:
   type: InMemoryLockStore

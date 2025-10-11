@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: rasa-chatbot
+    name: arsemble-ai
     env: python
     plan: free
     buildCommand: "./build.sh"
