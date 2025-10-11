@@ -1,1 +1,1 @@
-web: rasa run --m models --enable-api --cors "*" -p $PORT
+web: rasa run --enable-api --cors "*" -p $PORT
